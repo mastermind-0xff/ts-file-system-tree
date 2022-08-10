@@ -1,0 +1,37 @@
+{
+  "name": "ts-file-system-tree",
+  "version": "1.0.0",
+  "description": "Gather user input files from sources like input.files (FileList) and event.dataTransfer.items (DataTransferItemList) to generate a unified tree structure that includes items' path.",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {
+    "rimraf": "^3.0.2",
+    "typescript": "^4.7.4"
+  },
+  "scripts": {
+    "push": "npm version patch && git push",
+    "push-minor": "npm version minor && git push",
+    "push-major": "npm version major && git push",
+    "clean": "rimraf dist",
+    "build": "tsc",
+    "build-doc": "build-doc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mastermind-0xff/ts-file-system-tree.git"
+  },
+  "keywords": [
+    "DataTransferItemList",
+    "FileList",
+    "File",
+    "input.files",
+    "dataTransfer.items"
+  ],
+  "author": "Tihomir Trifonov (https://github.com/mastermind-0xff/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mastermind-0xff/ts-file-system-tree/issues"
+  },
+  "homepage": "https://github.com/mastermind-0xff/ts-file-system-tree#readme"
+}

@@ -1,0 +1,20 @@
+{
+  "commands": [
+    {
+      "command": "commands.refresh",
+      "text": "$(sync)",
+      "tooltip": "Refresh commands",
+      "color": "#FFCC00"
+    },
+    {
+      "text": "push x.y.Z",
+      "command": "npm run push",
+      "tooltip": "npm version patch && git push"
+    },
+    {
+      "text": "push x.Y.z",
+      "command": "npm run push-minor",
+      "tooltip": "npm version minor && git push"
+    },
+  ]
+}
