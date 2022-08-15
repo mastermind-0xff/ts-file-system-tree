@@ -3,5 +3,6 @@
     "entryPoints": [
         "./src"
     ],
-    "out": "docs"
+    "out": "docs",
+    "plugin": ["typedoc-plugin-markdown"]
 }
