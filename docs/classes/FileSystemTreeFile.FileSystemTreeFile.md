@@ -1,27 +1,27 @@
-[ts-file-system-tree](../README.md) / [Exports](../modules.md) / [lib/FileSystemTreeFile](../modules/lib_FileSystemTreeFile.md) / FileSystemTreeFile
+[ts-file-system-tree](../README.md) / [Exports](../modules.md) / [FileSystemTreeFile](../modules/FileSystemTreeFile.md) / FileSystemTreeFile
 
 # Class: FileSystemTreeFile
 
-[lib/FileSystemTreeFile](../modules/lib_FileSystemTreeFile.md).FileSystemTreeFile
+[FileSystemTreeFile](../modules/FileSystemTreeFile.md).FileSystemTreeFile
 
 ## Table of contents
 
 ### Constructors
 
-- [constructor](lib_FileSystemTreeFile.FileSystemTreeFile.md#constructor)
+- [constructor](FileSystemTreeFile.FileSystemTreeFile.md#constructor)
 
 ### Properties
 
-- [file](lib_FileSystemTreeFile.FileSystemTreeFile.md#file)
-- [fullPath](lib_FileSystemTreeFile.FileSystemTreeFile.md#fullpath)
-- [name](lib_FileSystemTreeFile.FileSystemTreeFile.md#name)
-- [path](lib_FileSystemTreeFile.FileSystemTreeFile.md#path)
+- [file](FileSystemTreeFile.FileSystemTreeFile.md#file)
+- [fullPath](FileSystemTreeFile.FileSystemTreeFile.md#fullpath)
+- [name](FileSystemTreeFile.FileSystemTreeFile.md#name)
+- [path](FileSystemTreeFile.FileSystemTreeFile.md#path)
 
 ### Methods
 
-- [getFileFromEntry](lib_FileSystemTreeFile.FileSystemTreeFile.md#getfilefromentry)
-- [initializeAsync](lib_FileSystemTreeFile.FileSystemTreeFile.md#initializeasync)
-- [initializeSync](lib_FileSystemTreeFile.FileSystemTreeFile.md#initializesync)
+- [getFileFromEntry](FileSystemTreeFile.FileSystemTreeFile.md#getfilefromentry)
+- [initializeAsync](FileSystemTreeFile.FileSystemTreeFile.md#initializeasync)
+- [initializeSync](FileSystemTreeFile.FileSystemTreeFile.md#initializesync)
 
 ## Constructors
 
@@ -38,7 +38,7 @@
 
 #### Defined in
 
-lib/FileSystemTreeFile.ts:25
+FileSystemTreeFile.ts:25
 
 ## Properties
 
@@ -50,7 +50,7 @@ File object
 
 #### Defined in
 
-lib/FileSystemTreeFile.ts:5
+FileSystemTreeFile.ts:5
 
 ___
 
@@ -62,7 +62,7 @@ Full path including filename.
 
 #### Defined in
 
-lib/FileSystemTreeFile.ts:9
+FileSystemTreeFile.ts:9
 
 ___
 
@@ -74,7 +74,7 @@ File name.
 
 #### Defined in
 
-lib/FileSystemTreeFile.ts:13
+FileSystemTreeFile.ts:13
 
 ___
 
@@ -86,7 +86,7 @@ Path from root without filename and dash at the end.
 
 #### Defined in
 
-lib/FileSystemTreeFile.ts:17
+FileSystemTreeFile.ts:17
 
 ## Methods
 
@@ -110,13 +110,13 @@ File object.
 
 #### Defined in
 
-lib/FileSystemTreeFile.ts:37
+FileSystemTreeFile.ts:37
 
 ___
 
 ### initializeAsync
 
-▸ `Static` **initializeAsync**(`$fileEntry`): `Promise`<[`FileSystemTreeFile`](lib_FileSystemTreeFile.FileSystemTreeFile.md)\>
+▸ `Static` **initializeAsync**(`$fileEntry`): `Promise`<[`FileSystemTreeFile`](FileSystemTreeFile.FileSystemTreeFile.md)\>
 
 Initialize a file in a async way.
 
@@ -128,19 +128,19 @@ Initialize a file in a async way.
 
 #### Returns
 
-`Promise`<[`FileSystemTreeFile`](lib_FileSystemTreeFile.FileSystemTreeFile.md)\>
+`Promise`<[`FileSystemTreeFile`](FileSystemTreeFile.FileSystemTreeFile.md)\>
 
 File object with unified path proeprty.
 
 #### Defined in
 
-lib/FileSystemTreeFile.ts:49
+FileSystemTreeFile.ts:49
 
 ___
 
 ### initializeSync
 
-▸ `Static` **initializeSync**(`$file`): [`FileSystemTreeFile`](lib_FileSystemTreeFile.FileSystemTreeFile.md)
+▸ `Static` **initializeSync**(`$file`): [`FileSystemTreeFile`](FileSystemTreeFile.FileSystemTreeFile.md)
 
 Initialize a file from a File object.
 
@@ -152,10 +152,10 @@ Initialize a file from a File object.
 
 #### Returns
 
-[`FileSystemTreeFile`](lib_FileSystemTreeFile.FileSystemTreeFile.md)
+[`FileSystemTreeFile`](FileSystemTreeFile.FileSystemTreeFile.md)
 
 File object with unified path proeprty.
 
 #### Defined in
 
-lib/FileSystemTreeFile.ts:60
+FileSystemTreeFile.ts:60
