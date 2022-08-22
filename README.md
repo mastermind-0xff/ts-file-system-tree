@@ -8,6 +8,11 @@ Library that gathers different sources of user input files like Drag And Drop ev
 npm install ts-file-system-tree
 ```
 
+## Usage
+```ts
+
+```
+
 
 ## Reference Guides
 [Modules](https://github.com/mastermind-0xff/ts-file-system-tree/blob/main/docs/classes/FileSystemTreeDirectory.FileSystemTreeDirectory.md)
