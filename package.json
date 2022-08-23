@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Gather user input files from sources like input.files (FileList) and event.dataTransfer.items (DataTransferItemList) to generate a unified tree structure that includes items' path.",
   "main": "index.js",
+  "types": "./src/index.ts",
   "dependencies": {
     "@types/node": "^18.7.1"
   },
