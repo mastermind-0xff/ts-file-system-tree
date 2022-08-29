@@ -10,7 +10,7 @@
     "allowJs": true,
     "declaration": true,
     "sourceMap": true,
-    "outDir": "dist",
+    "outDir": "./dist",
     "rootDir": "./src",
     "importHelpers": true,
     "downlevelIteration": true,
@@ -24,13 +24,9 @@
     "skipLibCheck": true
   },
   "include": [
-    "src",
+    "./src",
   ],
-  "exclude": [
-    "dist",
-    "node_modules",
-    "docs",
-    "tests",
-    ".vscode"
-  ]
+  // "exclude": [
+  //   "node_modules"
+  // ]
 }
