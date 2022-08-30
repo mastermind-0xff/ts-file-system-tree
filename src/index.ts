@@ -1,5 +1,2 @@
-import { FileSystemTreeDirectory } from "./lib/FileSystemTreeDirectory";
-import { FileSystemTreeFile } from "./lib/FileSystemTreeFile";
-
-export const FileSystemTreeDirectory2 = FileSystemTreeDirectory;
-export const FileSystemTreeFile2 = FileSystemTreeFile;
+export { FileSystemTreeDirectory } from './lib/FileSystemTreeDirectory';
+export { FileSystemTreeFile } from './lib/FileSystemTreeFile';

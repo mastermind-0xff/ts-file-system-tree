@@ -1,4 +1,4 @@
-import { FileSystemTreeFile } from "./FileSystemTreeFile";
+import { FileSystemTreeFile } from './FileSystemTreeFile';
 
 export class FileSystemTreeDirectory {
     /**
@@ -8,14 +8,17 @@ export class FileSystemTreeDirectory {
     /**
      * Directory name.
      */
-    name: string = ''
+    name = '';
 
     /**
      * Create new directory container.
      * @param $name Directory name.
      * @param $items List of direcotries and files.
      */
-    constructor($name: string, $items?: (FileSystemTreeDirectory | FileSystemTreeFile)[]) {
+    constructor(
+        $name: string,
+        $items?: (FileSystemTreeDirectory | FileSystemTreeFile)[]
+    ) {
         this.name = $name;
         if ($items?.length) {
             this.items = $items;
@@ -27,16 +30,21 @@ export class FileSystemTreeDirectory {
      * @param $directoryEntry Directory entry to traverse.
      * @returns Directories and files list.
      */
-    static async getItemsFromDirectoryEntry($directoryEntry: FileSystemDirectoryEntry):
-        Promise<(FileSystemTreeDirectory | FileSystemTreeFile)[]> {
+    static async getItemsFromDirectoryEntry(
+        $directoryEntry: FileSystemDirectoryEntry
+    ): Promise<(FileSystemTreeDirectory | FileSystemTreeFile)[]> {
         const reader = $directoryEntry.createReader();
-        let entriesCycle = await FileSystemTreeDirectory.readDirectoryEntries(reader);
+        let entriesCycle = await FileSystemTreeDirectory.readDirectoryEntries(
+            reader
+        );
         const entries: FileSystemEntry[] = [...entriesCycle];
 
         // while more entries, repeat
         while (entriesCycle.length) {
             // try {
-            entriesCycle = await FileSystemTreeDirectory.readDirectoryEntries(reader);
+            entriesCycle = await FileSystemTreeDirectory.readDirectoryEntries(
+                reader
+            );
             entries.push(...entriesCycle);
             // } catch ($e) {
             // }
@@ -50,25 +58,35 @@ export class FileSystemTreeDirectory {
      * @param $fileList File input files property.
      * @returns Directories and files list.
      */
-    static getItemsFromFileList($fileList: FileList):
-        (FileSystemTreeDirectory | FileSystemTreeFile)[] {
+    static getItemsFromFileList(
+        $fileList: FileList
+    ): (FileSystemTreeDirectory | FileSystemTreeFile)[] {
         const result: (FileSystemTreeDirectory | FileSystemTreeFile)[] = [];
         const tempTree: any = {};
         let previousDir;
         for (let i = 0; i < $fileList.length; i++) {
-            let file = $fileList[i];
-            let dtFile = new FileSystemTreeFile(file, file.webkitRelativePath);
+            const file = $fileList[i];
+            const dtFile = new FileSystemTreeFile(
+                file,
+                file.webkitRelativePath
+            );
             const pathSegments = String(file.webkitRelativePath).split('/');
             pathSegments.pop();
             const path = pathSegments.join('/');
             if (pathSegments.length) {
                 if (tempTree[path] === undefined) {
                     for (let n = 0; n < pathSegments.length; n++) {
-                        let currentPath = pathSegments.slice(0, n + 1).join('/');
+                        const currentPath = pathSegments
+                            .slice(0, n + 1)
+                            .join('/');
                         if (!tempTree[currentPath]) {
-                            tempTree[currentPath] = new FileSystemTreeDirectory(pathSegments[n]);
+                            tempTree[currentPath] = new FileSystemTreeDirectory(
+                                pathSegments[n]
+                            );
                             if (previousDir) {
-                                <FileSystemTreeDirectory>previousDir.addItem(tempTree[currentPath]);
+                                <FileSystemTreeDirectory>(
+                                    previousDir.addItem(tempTree[currentPath])
+                                );
                             } else {
                                 result.push(tempTree[path]);
                             }
@@ -80,8 +98,7 @@ export class FileSystemTreeDirectory {
                         }
                     }
                 }
-                <FileSystemTreeDirectory>tempTree[path].addItem(dtFile)
-
+                <FileSystemTreeDirectory>tempTree[path].addItem(dtFile);
             } else {
                 result.push(dtFile);
             }
@@ -91,45 +108,49 @@ export class FileSystemTreeDirectory {
 
     /**
      * Retrieve directories and files with their relative paths from a drag and drop event.
-     * @param $items 
+     * @param $items
      * @returns Directories and files list.
      */
-    static async getItemsFromItemList($items: DataTransferItemList):
-        Promise<(FileSystemTreeDirectory | FileSystemTreeFile)[]> {
-        const entries = Array.from($items).map($item => $item.webkitGetAsEntry());
+    static async getItemsFromItemList(
+        $items: DataTransferItemList
+    ): Promise<(FileSystemTreeDirectory | FileSystemTreeFile)[]> {
+        const entries = Array.from($items).map(($item) =>
+            $item.webkitGetAsEntry()
+        );
         return await FileSystemTreeDirectory.loopEntries(entries);
     }
 
     /**
-     * Initialize directories and files async in one uniform tree structure. 
-     * For example from drag and drop event - 'dataTransfer.items'. 
+     * Initialize directories and files async in one uniform tree structure.
+     * For example from drag and drop event - 'dataTransfer.items'.
      * @param $items Directory entry or drag and drop items list.
      * @returns Root directory with the corresponding tree.
      */
-    static async initializeAsync($items: FileSystemDirectoryEntry | DataTransferItemList | undefined):
-        Promise<FileSystemTreeDirectory> {
+    static async initializeAsync(
+        $items: FileSystemDirectoryEntry | DataTransferItemList | undefined
+    ): Promise<FileSystemTreeDirectory> {
         let items: (FileSystemTreeDirectory | FileSystemTreeFile)[] = [];
         if ($items instanceof DataTransferItemList) {
             items = await FileSystemTreeDirectory.getItemsFromItemList($items);
         } else if ($items === undefined) {
             // TODO
-
         } else {
             // FileSystemDirectoryEntry is not defined runtime error
-            //} else if ($items instanceof FileSystemDirectoryEntry) {
-            items = await FileSystemTreeDirectory.getItemsFromDirectoryEntry(<FileSystemDirectoryEntry>$items);
+            // } else if ($items instanceof FileSystemDirectoryEntry) {
+            items = await FileSystemTreeDirectory.getItemsFromDirectoryEntry(
+                <FileSystemDirectoryEntry>$items
+            );
         }
         return new FileSystemTreeDirectory('root', items);
     }
 
     /**
-     * Initialize directories and files in one uniform tree structure. 
-     * For example from input type file - 'input.files'. 
+     * Initialize directories and files in one uniform tree structure.
+     * For example from input type file - 'input.files'.
      * @param $items File input files.
      * @returns Root directory with the corresponding tree.
      */
-    static initializeSync($items: FileList):
-        FileSystemTreeDirectory {
+    static initializeSync($items: FileList): FileSystemTreeDirectory {
         const items: (FileSystemTreeDirectory | FileSystemTreeFile)[] =
             FileSystemTreeDirectory.getItemsFromFileList($items);
         return new FileSystemTreeDirectory('root', items);
@@ -140,15 +161,24 @@ export class FileSystemTreeDirectory {
      * @param $entries Entries list.
      * @returns Directories and files list.
      */
-    static async loopEntries($entries: (FileSystemEntry | null)[]):
-        Promise<(FileSystemTreeDirectory | FileSystemTreeFile)[]> {
+    static async loopEntries(
+        $entries: (FileSystemEntry | null)[]
+    ): Promise<(FileSystemTreeDirectory | FileSystemTreeFile)[]> {
         const items: (FileSystemTreeDirectory | FileSystemTreeFile)[] = [];
-        for (let entry of $entries) {
+        for (const entry of $entries) {
             if (entry) {
                 if (entry.isFile) {
-                    items.push(await FileSystemTreeFile.initializeAsync(<FileSystemFileEntry>entry));
+                    items.push(
+                        await FileSystemTreeFile.initializeAsync(
+                            <FileSystemFileEntry>entry
+                        )
+                    );
                 } else {
-                    items.push(await FileSystemTreeDirectory.initializeAsync(<FileSystemDirectoryEntry>entry));
+                    items.push(
+                        await FileSystemTreeDirectory.initializeAsync(
+                            <FileSystemDirectoryEntry>entry
+                        )
+                    );
                 }
             }
         }
@@ -156,15 +186,16 @@ export class FileSystemTreeDirectory {
     }
 
     /**
-     * Read current batch of entries from a FileSystemDirectoryReader. 
+     * Read current batch of entries from a FileSystemDirectoryReader.
      * Could be limited to 100 by the browser.
      * @param $reader The directory reader.
-     * @returns List of FileSystemEntry that are FileSystemFileEntry or 
+     * @returns List of FileSystemEntry that are FileSystemFileEntry or
      * FileSystemDirectoryEntry.
      */
-    static async readDirectoryEntries($reader: FileSystemDirectoryReader):
-        Promise<FileSystemEntry[]> {
-        return await new Promise<FileSystemEntry[]>(async ($resolve, $reject) => {
+    static async readDirectoryEntries(
+        $reader: FileSystemDirectoryReader
+    ): Promise<FileSystemEntry[]> {
+        return await new Promise<FileSystemEntry[]>(($resolve, $reject) => {
             $reader.readEntries($resolve, $reject);
         });
     }
@@ -174,8 +205,7 @@ export class FileSystemTreeDirectory {
      * @param $item Directory or file.
      * @param $index Position in the tree.
      */
-    addItem($item: FileSystemTreeDirectory | FileSystemTreeFile,
-        $index: number = -1) {
+    addItem($item: FileSystemTreeDirectory | FileSystemTreeFile, $index = -1) {
         if ($index < 0) {
             this.items.push($item);
         } else {
@@ -189,7 +219,7 @@ export class FileSystemTreeDirectory {
      */
     flatten(): FileSystemTreeFile[] {
         const flattenItems: FileSystemTreeFile[] = [];
-        for (let item of this.items) {
+        for (const item of this.items) {
             if (item instanceof FileSystemTreeFile) {
                 flattenItems.push(item);
             } else if (item instanceof FileSystemTreeDirectory) {
@@ -204,10 +234,12 @@ export class FileSystemTreeDirectory {
      * @param $name The exact name or RegExp to match against.
      * @returns The directory.
      */
-    getDirectoryByName($name: string | RegExp):
-        FileSystemTreeDirectory | null {
+    getDirectoryByName($name: string | RegExp): FileSystemTreeDirectory | null {
         const foundItems = this.getItems($name, 'directory', false);
-        return foundItems.length && <FileSystemTreeDirectory>foundItems[0] || null;
+        return (
+            (foundItems.length && <FileSystemTreeDirectory>foundItems[0]) ||
+            null
+        );
     }
 
     /**
@@ -215,10 +247,9 @@ export class FileSystemTreeDirectory {
      * @param $name The exact name or RegExp to match against.
      * @returns The file.
      */
-    getFileByName($name: string | RegExp):
-        FileSystemTreeFile | null {
+    getFileByName($name: string | RegExp): FileSystemTreeFile | null {
         const foundItems = this.getItems($name, 'file', false);
-        return foundItems.length && <FileSystemTreeFile>foundItems[0] || null;
+        return (foundItems.length && <FileSystemTreeFile>foundItems[0]) || null;
     }
 
     /**
@@ -229,8 +260,7 @@ export class FileSystemTreeDirectory {
      * @param $index The id.
      * @returns The item - a directory or a file.
      */
-    getItemById($index: number):
-        FileSystemTreeDirectory | FileSystemTreeFile {
+    getItemById($index: number): FileSystemTreeDirectory | FileSystemTreeFile {
         if ($index >= 0 && $index < this.items.length) {
             return this.items[$index];
         }
@@ -242,10 +272,11 @@ export class FileSystemTreeDirectory {
      * @param $name The exact name or RegExp to match against.
      * @returns The item - a directory or a file.
      */
-    getItemByName($name: string | RegExp):
-        FileSystemTreeDirectory | FileSystemTreeFile | null {
+    getItemByName(
+        $name: string | RegExp
+    ): FileSystemTreeDirectory | FileSystemTreeFile | null {
         const foundItems = this.getItems($name, 'both', false);
-        return foundItems.length && foundItems[0] || null;
+        return (foundItems.length && foundItems[0]) || null;
     }
 
     /**
@@ -255,20 +286,20 @@ export class FileSystemTreeDirectory {
      * @param $recursive Follow directory items when traversing.
      * @returns Directories and files list.
      */
-    getItems($name: string | RegExp, $type: 'directory' | 'file' | 'both' = 'both', $recursive: boolean = true):
-        (FileSystemTreeDirectory | FileSystemTreeFile)[] {
-        let foundItems: (FileSystemTreeDirectory | FileSystemTreeFile)[] = [];
+    getItems(
+        $name: string | RegExp,
+        $type: 'directory' | 'file' | 'both' = 'both',
+        $recursive = true
+    ): (FileSystemTreeDirectory | FileSystemTreeFile)[] {
+        const foundItems: (FileSystemTreeDirectory | FileSystemTreeFile)[] = [];
         for (const item of this.items) {
             if (
-                (
-                    typeof $name === 'string' && item.name === $name ||
-                    $name instanceof RegExp && $name.test(item.name)
-                ) &&
-                (
-                    $type === 'both' ||
-                    $type === 'file' && item instanceof FileSystemTreeFile ||
-                    $type === 'directory' && item instanceof FileSystemTreeDirectory
-                )
+                ((typeof $name === 'string' && item.name === $name) ||
+                    ($name instanceof RegExp && $name.test(item.name))) &&
+                ($type === 'both' ||
+                    ($type === 'file' && item instanceof FileSystemTreeFile) ||
+                    ($type === 'directory' &&
+                        item instanceof FileSystemTreeDirectory))
             ) {
                 foundItems.push(item);
             }
@@ -285,8 +316,7 @@ export class FileSystemTreeDirectory {
      * @param $index Number.
      * @returns The item or throws an error.
      */
-    removeItem($index: number):
-        FileSystemTreeDirectory | FileSystemTreeFile {
+    removeItem($index: number): FileSystemTreeDirectory | FileSystemTreeFile {
         if ($index >= 0 && $index < this.items.length && this.items[$index]) {
             const item = this.items.splice($index, 1).pop();
             if (item) return item; // can't directly return .pop() because of undefined

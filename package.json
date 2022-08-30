@@ -7,10 +7,17 @@
   "files": [
     "/dist/**/*"
   ],
-  "dependencies": {
-    "@types/node": "^18.7.1"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@types/node": "^18.7.14",
+    "@typescript-eslint/eslint-plugin": "^5.36.0",
+    "@typescript-eslint/parser": "^5.36.0",
+    "eslint": "^8.23.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-import-resolver-typescript": "^3.5.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "prettier": "^2.7.1",
     "rimraf": "^3.0.2",
     "typedoc": "^0.23.10",
     "typedoc-plugin-markdown": "^3.13.4",
@@ -19,13 +26,15 @@
   "scripts": {
     "tsc": "tsc",
     "typedoc": "typedoc",
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
+    "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx,json}",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json} --config ./.prettierrc",
+    "clean": "rimraf dist && mkdir dist",
+    "build-doc": "typedoc",
+    "build": "npm run clean && npm run lint && npm run format && tsc && npm run build-doc",
     "push": "npm version patch && git push",
     "push-minor": "npm version minor && git push",
-    "push-major": "npm version major && git push",
-    "clean": "rimraf dist && mkdir dist",
-    "build": "npm run clean && tsc",
-    "build-doc": "build-doc",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "push-major": "npm version major && git push"
   },
   "repository": {
     "type": "git",
