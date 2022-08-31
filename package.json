@@ -1,6 +1,6 @@
 {
   "name": "ts-file-system-tree",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Gather user input files from sources like input.files (FileList) and event.dataTransfer.items (DataTransferItemList) to generate a unified tree structure that includes items' path.",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
