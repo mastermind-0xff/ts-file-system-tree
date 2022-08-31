@@ -8,12 +8,14 @@
     },
     {
       "text": "push x.y.Z",
-      "command": "npm run push",
+      "command": "workbench.action.terminal.sendSequence",
+      "arguments": [{"text": "npm run push\u000d"}],
       "tooltip": "npm version patch && git push"
     },
     {
       "text": "push x.Y.z",
-      "command": "npm run push-minor",
+      "command": "workbench.action.terminal.sendSequence",
+      "arguments": [{"text": "npm run push-minor\u000d"}],
       "tooltip": "npm version minor && git push"
     },
   ]
