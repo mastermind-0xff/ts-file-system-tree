@@ -97,7 +97,7 @@ Add item to the tree.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:208
+lib/FileSystemTreeDirectory.ts:211
 
 ___
 
@@ -115,7 +115,7 @@ Files list.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:220
+lib/FileSystemTreeDirectory.ts:223
 
 ___
 
@@ -139,7 +139,7 @@ The directory.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:237
+lib/FileSystemTreeDirectory.ts:240
 
 ___
 
@@ -163,7 +163,7 @@ The file.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:250
+lib/FileSystemTreeDirectory.ts:253
 
 ___
 
@@ -190,7 +190,7 @@ The item - a directory or a file.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:263
+lib/FileSystemTreeDirectory.ts:266
 
 ___
 
@@ -214,7 +214,7 @@ The item - a directory or a file.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:275
+lib/FileSystemTreeDirectory.ts:278
 
 ___
 
@@ -240,7 +240,7 @@ Directories and files list.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:289
+lib/FileSystemTreeDirectory.ts:292
 
 ___
 
@@ -264,7 +264,7 @@ The item or throws an error.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:319
+lib/FileSystemTreeDirectory.ts:322
 
 ___
 
@@ -420,6 +420,9 @@ ___
 
 Read current batch of entries from a FileSystemDirectoryReader.
 Could be limited to 100 by the browser.
+```ts
+var a = 123;
+```
 
 #### Parameters
 
@@ -436,4 +439,4 @@ FileSystemDirectoryEntry.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:195
+lib/FileSystemTreeDirectory.ts:198
