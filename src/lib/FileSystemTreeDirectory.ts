@@ -188,9 +188,6 @@ export class FileSystemTreeDirectory {
     /**
      * Read current batch of entries from a FileSystemDirectoryReader.
      * Could be limited to 100 by the browser.
-     * ```ts
-     * var a = 123;
-     * ```
      * @param $reader The directory reader.
      * @returns List of FileSystemEntry that are FileSystemFileEntry or
      * FileSystemDirectoryEntry.
