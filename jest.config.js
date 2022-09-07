@@ -1,13 +1,8 @@
-/*
- * For a detailed explanation regarding each configuration property, visit:
- * https://jestjs.io/docs/configuration
- */
-
+/** @type {import('ts-jest/dist/types').InitialOptionsTsJest} */
 module.exports = {
-  // collectCoverage: true,
-  // coverageDirectory: "coverage",
+  preset: 'ts-jest',
+  testEnvironment: 'node',
   roots: [
     "<rootDir>/tests"
   ],
-
 };
