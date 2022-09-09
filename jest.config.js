@@ -3,6 +3,6 @@ module.exports = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
   roots: [
-    "<rootDir>/tests"
+    "<rootDir>/__tests__"
   ],
 };
