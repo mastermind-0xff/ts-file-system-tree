@@ -50,7 +50,7 @@ Create new directory container.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:18
+[lib/FileSystemTreeDirectory.ts:18](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeDirectory.ts#L18)
 
 ## Properties
 
@@ -62,7 +62,7 @@ List of all direcotries and files in the order they were retrieved.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:7
+[lib/FileSystemTreeDirectory.ts:7](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeDirectory.ts#L7)
 
 ___
 
@@ -74,7 +74,7 @@ Directory name.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:11
+[lib/FileSystemTreeDirectory.ts:11](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeDirectory.ts#L11)
 
 ## Methods
 
@@ -97,7 +97,7 @@ Add item to the tree.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:208
+[lib/FileSystemTreeDirectory.ts:208](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeDirectory.ts#L208)
 
 ___
 
@@ -115,7 +115,7 @@ Files list.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:220
+[lib/FileSystemTreeDirectory.ts:220](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeDirectory.ts#L220)
 
 ___
 
@@ -139,7 +139,7 @@ The directory.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:237
+[lib/FileSystemTreeDirectory.ts:237](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeDirectory.ts#L237)
 
 ___
 
@@ -163,7 +163,7 @@ The file.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:250
+[lib/FileSystemTreeDirectory.ts:250](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeDirectory.ts#L250)
 
 ___
 
@@ -190,7 +190,7 @@ The item - a directory or a file.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:263
+[lib/FileSystemTreeDirectory.ts:263](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeDirectory.ts#L263)
 
 ___
 
@@ -214,7 +214,7 @@ The item - a directory or a file.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:275
+[lib/FileSystemTreeDirectory.ts:275](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeDirectory.ts#L275)
 
 ___
 
@@ -240,7 +240,7 @@ Directories and files list.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:289
+[lib/FileSystemTreeDirectory.ts:289](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeDirectory.ts#L289)
 
 ___
 
@@ -264,7 +264,7 @@ The item or throws an error.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:319
+[lib/FileSystemTreeDirectory.ts:319](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeDirectory.ts#L319)
 
 ___
 
@@ -288,7 +288,7 @@ Directories and files list.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:33
+[lib/FileSystemTreeDirectory.ts:33](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeDirectory.ts#L33)
 
 ___
 
@@ -312,7 +312,7 @@ Directories and files list.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:61
+[lib/FileSystemTreeDirectory.ts:61](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeDirectory.ts#L61)
 
 ___
 
@@ -336,7 +336,7 @@ Directories and files list.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:114
+[lib/FileSystemTreeDirectory.ts:114](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeDirectory.ts#L114)
 
 ___
 
@@ -361,7 +361,7 @@ Root directory with the corresponding tree.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:129
+[lib/FileSystemTreeDirectory.ts:129](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeDirectory.ts#L129)
 
 ___
 
@@ -386,7 +386,7 @@ Root directory with the corresponding tree.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:153
+[lib/FileSystemTreeDirectory.ts:153](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeDirectory.ts#L153)
 
 ___
 
@@ -410,7 +410,7 @@ Directories and files list.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:164
+[lib/FileSystemTreeDirectory.ts:164](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeDirectory.ts#L164)
 
 ___
 
@@ -436,4 +436,4 @@ FileSystemDirectoryEntry.
 
 #### Defined in
 
-lib/FileSystemTreeDirectory.ts:195
+[lib/FileSystemTreeDirectory.ts:195](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeDirectory.ts#L195)

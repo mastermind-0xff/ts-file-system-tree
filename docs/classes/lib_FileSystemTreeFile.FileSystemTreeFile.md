@@ -38,7 +38,7 @@
 
 #### Defined in
 
-lib/FileSystemTreeFile.ts:25
+[lib/FileSystemTreeFile.ts:25](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeFile.ts#L25)
 
 ## Properties
 
@@ -50,7 +50,7 @@ File object
 
 #### Defined in
 
-lib/FileSystemTreeFile.ts:5
+[lib/FileSystemTreeFile.ts:5](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeFile.ts#L5)
 
 ___
 
@@ -62,7 +62,7 @@ Full path including filename.
 
 #### Defined in
 
-lib/FileSystemTreeFile.ts:9
+[lib/FileSystemTreeFile.ts:9](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeFile.ts#L9)
 
 ___
 
@@ -74,7 +74,7 @@ File name.
 
 #### Defined in
 
-lib/FileSystemTreeFile.ts:13
+[lib/FileSystemTreeFile.ts:13](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeFile.ts#L13)
 
 ___
 
@@ -86,7 +86,7 @@ Path from root without filename and dash at the end.
 
 #### Defined in
 
-lib/FileSystemTreeFile.ts:17
+[lib/FileSystemTreeFile.ts:17](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeFile.ts#L17)
 
 ## Methods
 
@@ -110,7 +110,7 @@ File object.
 
 #### Defined in
 
-lib/FileSystemTreeFile.ts:37
+[lib/FileSystemTreeFile.ts:37](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeFile.ts#L37)
 
 ___
 
@@ -134,7 +134,7 @@ File object with unified path proeprty.
 
 #### Defined in
 
-lib/FileSystemTreeFile.ts:50
+[lib/FileSystemTreeFile.ts:50](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeFile.ts#L50)
 
 ___
 
@@ -158,4 +158,4 @@ File object with unified path proeprty.
 
 #### Defined in
 
-lib/FileSystemTreeFile.ts:62
+[lib/FileSystemTreeFile.ts:62](https://github.com/mastermind-0xff/ts-file-system-tree/blob/cdb9966/src/lib/FileSystemTreeFile.ts#L62)
